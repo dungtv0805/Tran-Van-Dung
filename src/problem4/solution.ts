@@ -1,7 +1,7 @@
 function sum_to_n_a(n: number): number {
   if (!n) return 0;
   const signNum = n > 0 ? 1 : -1;
-  return (n - 1) * (n / 2) * signNum;
+  return (n + 1) * (n / 2) * signNum;
 }
 
 function sum_to_n_b(n: number): number {

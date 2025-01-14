@@ -1,12 +1,13 @@
 import { FC } from 'react';
 import './app.module.scss';
+import { FancyForm } from './fancy-form';
 
 export const App: FC = () => {
   return (
     <div>
       <div className="blur-circle"></div>
       <div className="container">
-        <h1>Content</h1>
+        <FancyForm></FancyForm>
       </div>
     </div>
   );

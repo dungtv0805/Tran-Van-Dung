@@ -1,8 +1,15 @@
 import { FC } from 'react';
-import { environment } from '../env/environment';
+import './app.module.scss';
 
 export const App: FC = () => {
-  return <div>{environment.iconTokenPrefixUrl}</div>;
+  return (
+    <div>
+      <div className="blur-circle"></div>
+      <div className="container">
+        <h1>Content</h1>
+      </div>
+    </div>
+  );
 };
 
 export default App;

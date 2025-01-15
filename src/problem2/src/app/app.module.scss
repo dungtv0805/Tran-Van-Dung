@@ -1,0 +1,36 @@
+$bg-gradient-start: #f8faff;
+$bg-gradient-end: #e8f3ff;
+$blur-circle-color: rgba(173, 216, 230, 0.3);
+
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(180deg, $bg-gradient-start, $bg-gradient-end);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+
+  .blur-circle {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: $blur-circle-color;
+    filter: blur(200px);
+    border-radius: 50%;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .container {
+    z-index: 1;
+    text-align: center;
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+}

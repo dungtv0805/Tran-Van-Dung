@@ -1,0 +1,67 @@
+.currency-select-wrapper {
+  background-color: white;
+  max-width: 40%;
+  min-width: 30%;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  .ant-select {
+    width: 40%;
+    .ant-select-selector {
+      background: inherit;
+      border: none;
+    }
+  }
+}
+
+.price-currency {
+  width: 60%;
+  position: relative;
+  top: 10px;
+}
+
+.fancy-form-wrapper {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.tooltip-container {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  width: 100%;
+}
+
+.text-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  display: inline-block;
+  font-size: 10px;
+}
+
+.tooltip-text {
+  visibility: hidden;
+  width: auto;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 10px;
+  border-radius: 4px;
+  position: absolute;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip-container:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}

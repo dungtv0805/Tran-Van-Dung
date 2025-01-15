@@ -13,11 +13,20 @@ type Props = Omit<SelectProps, 'options'> & {
   value?: string;
   onChange?: (v: string) => void;
   namePrice: string;
+  onPriceInputChange?: (v?: string) => void;
+  priceInputDisable?: boolean;
 };
 
 export const CurrencySelect: FC<Props> = (props) => {
-  const { tokens, namePrice, tokenMap } = props;
-  const selectProps = { ...props, tokens: undefined, namePrice: undefined };
+  const { tokens, namePrice, tokenMap, onPriceInputChange, priceInputDisable } =
+    props;
+  const selectProps = {
+    ...props,
+    tokens: undefined,
+    namePrice: undefined,
+    onPriceInputChange: undefined,
+    priceInputDisable: undefined,
+  };
 
   const options = useMemo<SelectProps['options']>(() => {
     return tokens?.map((item, idx) => {
@@ -41,7 +50,7 @@ export const CurrencySelect: FC<Props> = (props) => {
   return (
     <div className="currency-select-wrapper">
       <img
-        style={{ marginLeft: 5}}
+        style={{ marginLeft: 5 }}
         src={`${environment.iconTokenPrefixUrl}/${
           tokenMap?.[props.value]?.currency
         }.svg`}
@@ -53,7 +62,10 @@ export const CurrencySelect: FC<Props> = (props) => {
         dropdownStyle={{ width: '320px' }}
       />
       <FormItem name={namePrice} noStyle>
-        <PriceCurreny />
+        <PriceCurreny
+          onChange={(v) => onPriceInputChange?.(v.inputPrice)}
+          disableInput={priceInputDisable}
+        />
       </FormItem>
     </div>
   );

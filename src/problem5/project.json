@@ -1,0 +1,26 @@
+{
+  "name": "problem5",
+  "$schema": "node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "dependsOn": ["build"],
+      "options": {
+        "buildTarget": "problem5:build",
+        "runBuildTargetDependencies": false
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "problem5:build:development"
+        },
+        "production": {
+          "buildTarget": "problem5:build:production"
+        }
+      }
+    }
+  }
+}

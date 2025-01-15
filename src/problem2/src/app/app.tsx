@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import './app.module.scss';
-import { FancyForm } from './fancy-form';
+import { FancyForm } from './fancy-form/fancy-form';
 
 export const App: FC = () => {
   return (

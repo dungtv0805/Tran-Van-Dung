@@ -1,1 +1,3 @@
-export abstract class EntityBase {}
+export abstract class EntityBase {
+  _id: string;
+}

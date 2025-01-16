@@ -4,7 +4,7 @@ import { Constructor } from 'src/utils';
 
 export class Database {
   static db: Map<Constructor<EntityBase>, DataStore> = new Map();
-  static entities: EntityBase[] = [];
+  static entities: Constructor<EntityBase>[] = [];
   // Initialize your database pool
   public static async init(): Promise<any> {
     for (const [entity, store] of this.db) {

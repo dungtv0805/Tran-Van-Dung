@@ -1,3 +1,4 @@
+export * from './entities';
 import * as os from 'os';
 
 import App from './providers/App';
@@ -43,6 +44,10 @@ if (cluster.isPrimary && Locals.config().isProduction) {
    */
   setTimeout(() => App.loadWorker(), 1000 * 60);
 } else {
+  /**
+   * Run the Database pool
+   */
+  App.loadDatabase();
   /**
    * Run the Server on Clusters
    */

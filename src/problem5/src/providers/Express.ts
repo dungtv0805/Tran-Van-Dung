@@ -1,8 +1,8 @@
 import express from 'express';
+import ExceptionHandler from '../exception/Handler';
+import Bootstrap from '../middlewares/Kernel';
 import Locals from './Locals';
 import Routes from './Routes';
-import Bootstrap from '../middlewares/Kernel';
-import ExceptionHandler from '../exception/Handler';
 
 class Express {
   /**

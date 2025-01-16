@@ -4,6 +4,7 @@ import * as path from 'path';
 import Express from './Express';
 
 import Log from '../middlewares/Log';
+import Database from './Database';
 
 class App {
   // Clear the console
@@ -23,6 +24,13 @@ class App {
     Log.info('Server :: Booting @ Master...');
 
     Express.init();
+  }
+
+  // Loads the Database Pool
+  public loadDatabase(): void {
+    Log.info('Database :: Booting @ Master...');
+
+    Database.init();
   }
 
   // Loads the Worker Cluster

@@ -1,6 +1,6 @@
+import * as dotenv from 'dotenv';
 import { Application } from 'express';
 import * as path from 'path';
-import * as dotenv from 'dotenv';
 
 class Locals {
   /**
@@ -19,7 +19,7 @@ class Locals {
     const keywords = process.env.APP_KEYWORDS || 'somethings';
     const year = new Date().getFullYear();
     const copyright = `Copyright ${year} ${name} | All Rights Reserved`;
-    const company = process.env.COMPANY_NAME || 'GeekyAnts';
+    const company = process.env.COMPANY_NAME || '';
     const description =
       process.env.APP_DESCRIPTION || 'Here goes the app description';
 
@@ -29,7 +29,8 @@ class Locals {
     const queueMonitor = process.env.QUEUE_HTTP_ENABLED || true;
     const queueMonitorHttpPort = process.env.QUEUE_HTTP_PORT || 5550;
     const isProduction = process.env.NODE_ENV === 'production';
-
+    const localdbName = process.env.LOCAL_DATA_NAME || 'local-db';
+    const localDbPath = process.env.LOCAL_DATA_PATH || 'local-db';
     return {
       apiPrefix,
       company,
@@ -45,6 +46,8 @@ class Locals {
       queueMonitor,
       queueMonitorHttpPort,
       isProduction,
+      localDbPath,
+      localdbName,
     };
   }
 

@@ -114,7 +114,7 @@ The major entities of the relational database are the Users table, the Actions t
 
 The major entities of the in-memory database (Redis) are Scores and Users. The sorted sets data type in Redis is used to store the Scores and the hash data type in Redis is used to store the metadata of the Users
 
-### Scoreboard high-level design
+## Scoreboard high-level design
 
 ### Flow update score (add action)
 
